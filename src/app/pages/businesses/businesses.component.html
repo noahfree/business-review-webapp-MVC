@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h1>Businesses</h1>
+    <div [routerLink]="['/reviews/', business.id]" routerLinkActive="active" class="businessCard" *ngFor="let business of businesses">
+        <span>{{ business.service }}</span>
+        <div>
+            <h2>{{ business.name }}</h2>
+            <p class="city">{{ business.city }}, {{ business.state }}</p>
+        </div>
+        <h3 class="line"></h3>
+        <p>{{ (business.rating).toFixed(2) }} Star(s)</p>
+        <p>{{ business.reviewCount }} Review(s)</p>
+    </div>
+</div>

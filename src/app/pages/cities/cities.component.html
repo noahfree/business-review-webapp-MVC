@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h1>Cities</h1>
+    <a [routerLink]="['/businesses/', city.id]" routerLinkActive="active" class="cityCard" *ngFor="let city of cities">
+        <span>City</span>
+        <div>
+            <h2>{{ city.name }}</h2>
+            <p class="state">{{ city.state }}</p>
+        </div>
+        <h3 class="line"></h3>
+        <p>{{ city.businessCount }} Business(es)</p>
+    </a>
+</div>

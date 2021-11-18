@@ -1,0 +1,16 @@
+<div class="layout-box">
+    <div class="top-bar">
+        <div routerLink="/cities">
+            <!-- <img src="assets/food_icon.svg" alt="food icon"> -->
+            <p class="tag">Business Reviews</p>
+        </div>
+        <p>Noah Free</p>
+    </div>
+    <div class="container">
+        <button #back [disabled]="toggle" class="topLeft" (click)="navigateBack()">Go Back</button>
+        <!-- <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div> -->
+        <button class="topRight" routerLink="/addReview">New Review</button>
+    </div>
+</div>

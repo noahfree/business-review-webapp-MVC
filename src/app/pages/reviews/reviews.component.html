@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h1>Reviews</h1>
+    <div class="reviewCard" *ngFor="let review of reviews">
+        <span>Review {{ review.date }}</span>
+        <div>
+            <h2>{{ review.rating}} Star(s)</h2>
+            <p class="business">{{ review.business }}</p>
+        </div>
+        <h3 class="line"></h3>
+        <p class="name">{{ review.name }}</p>
+        <p class="content">{{ review.content }}</p>
+        <!-- <h3 class="fade"></h3> -->
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<div class="box">
+    <h1>New Review</h1>
+    <!-- <span class="line"></span> -->
+    <div class="form-container">
+        <form [formGroup]="reviewForm" (ngSubmit)=onSubmit()>
+            <div class="field">
+                <input (change)="toggleCursor($event)" formControlName="city" required type="text" class="input" name="city" placeholder="City">
+            </div>
+            <div class="field">
+                <select formControlName="state" (change)="selectState($event)" required class="input" name="state">
+                    <option *ngFor="let state of states">{{ state }}</option>
+                </select>
+            </div>
+            <div class="field">
+                <input (change)="toggleCursor($event)" formControlName="business" required type="text" class="input" name="business" placeholder = "Business">
+            </div>
+            <div class="field">
+                <select formControlName="service" (change)="selectService($event)" required class="input" name="service" aria-placeholder="Business Type">
+                    <option *ngFor="let service of services">{{ service }}</option>
+                </select> 
+            </div>
+            <div class="field">
+                <input (change)="toggleCursor($event)" formControlName="name" required type="text" class="input" name="name" placeholder = "Name">
+            </div>
+            <div class="field">
+                <textarea (change)="toggleCursor($event)" formControlName="content" required type="textarea" class="input" name="content" placeholder = "Review"></textarea>
+            </div>
+            <div class="last">
+                <div class="stars">
+                    <img #star1 (click)="starFunc(1)" class="star" src="assets/Yelp-Four-Star-Icon.jpg" alt="Star">
+                    <img #star2 (click)="starFunc(2)" class="star" src="assets/Yelp-Four-Star-Icon.jpg" alt="Star">
+                    <img #star3 (click)="starFunc(3)" class="star" src="assets/Yelp-Four-Star-Icon.jpg" alt="Star">
+                    <img #star4 (click)="starFunc(4)" class="star" src="assets/Yelp-Four-Star-Icon.jpg" alt="Star">
+                    <img #star5 (click)="starFunc(5)" class="star" src="assets/Yelp-Four-Star-Icon.jpg" alt="Star">
+                </div>
+                <div class="submit">
+                    <button #submitButton type="submit" [disabled]="!toggle || !reviewForm.valid">Create Review</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
